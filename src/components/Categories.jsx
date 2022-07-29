@@ -11,7 +11,7 @@ function Categories() {
       <div className="container mx-auto w-9/12 mt-8">
         <h2 className="text-sm font-semibold mb-4">Kategoriler</h2>
         <div className="grid grid-cols-10">
-          {!categories.length && "Loading.."}
+          
           {categories &&
             categories.map((category, index) => (
               <div key={index}>

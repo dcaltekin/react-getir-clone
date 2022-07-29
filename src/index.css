@@ -10,7 +10,7 @@ body {
   padding: 0;
   border-size: border-box;
   font-family: "Prompt", sans-serif;
-
+  background-color: #e2dcc8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
