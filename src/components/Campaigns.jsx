@@ -5,7 +5,12 @@ function Campaigns() {
         <h2 className="text-sm font-semibold mb-4">Kampanyalar</h2>
       </div>
 
-      <div className="container mx-auto w-9/12 flex gap-x-4">
+      <div className="container mx-auto w-[74%] flex gap-x-1">
+        <img
+          className="w-1/3 rounded-lg"
+          src="https://cdn.getir.com/misc/62e3a660bcdc0e7f05033059_banner_tr_1659086493117.jpeg"
+          alt="getir"
+        />
         <img
           className="w-1/3 rounded-lg"
           src="https://cdn.getir.com/misc/611e55d33ea65bef40f9ba05_banner_tr_1655191370129.jpeg"
