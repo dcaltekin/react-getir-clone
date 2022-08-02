@@ -24,13 +24,13 @@ function Menu({ title, items }) {
 
   return (
     <div>
-      <div className="grid gap-y-2 md:gap-y-4 pt-6 sm:pt-0">
+      <div className="grid gap-y-2 sm:gap-y-4 pt-6 sm:pt-0">
         <h6
           onClick={toggleCollapse}
           className="text-lg text-primary-color flex items-center justify-between"
         >
           {title}
-          <button className="grid md:hidden w-6 h-6 place-items-center rounded-lg bg-primary-color bg-opacity-10 text-primary-color">
+          <button className="grid sm:hidden w-6 h-6 place-items-center rounded-lg bg-primary-color bg-opacity-10 text-primary-color">
             <span
               className={`transition-all transform ${
                 isOpen ? "-rotate-180" : ""
@@ -42,7 +42,7 @@ function Menu({ title, items }) {
         </h6>
         <Collapse isOpened={isOpen}>
           <nav>
-            <ul className="grid gap-y-3 md:gap-y-2">
+            <ul className="grid gap-y-3 sm:gap-y-2">
               {items.map((item, key) => (
                 <li key={key}>
                   <a href="/" className="text-sm hover:text-color">
