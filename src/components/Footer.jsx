@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import { BiGlobe } from "react-icons/bi";
-import { Collapse } from "react-collapse";
-import { useWindowWidth } from "@react-hook/window-size";
+
 import Menu from "../components/Menu";
 function Footer() {
   const menus = [
@@ -70,13 +68,6 @@ function Footer() {
       ],
     },
   ];
-  const [isOpen, setIsOpen] = useState(true);
-  const windowWidth = useWindowWidth();
-  const toggleCollapse = () => {
-    if (windowWidth < 641) {
-      setIsOpen(!isOpen);
-    }
-  };
 
   return (
     <div className="bg-white">

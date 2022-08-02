@@ -3,7 +3,7 @@ import { Collapse } from "react-collapse";
 import { useWindowWidth } from "@react-hook/window-size";
 import { IoIosArrowDown } from "react-icons/io";
 
-export default function Menu({ title, items }) {
+function Menu({ title, items }) {
   const windowWidth = useWindowWidth();
   const [isOpen, setIsOpen] = useState(true);
 
@@ -45,7 +45,7 @@ export default function Menu({ title, items }) {
             <ul className="grid gap-y-3 md:gap-y-2">
               {items.map((item, key) => (
                 <li key={key}>
-                  <a href="#" className="text-sm hover:text-color">
+                  <a href="/" className="text-sm hover:text-color">
                     {item.title}
                   </a>
                 </li>
@@ -57,3 +57,4 @@ export default function Menu({ title, items }) {
     </div>
   );
 }
+export default Menu;
