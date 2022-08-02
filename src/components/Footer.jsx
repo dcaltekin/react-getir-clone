@@ -1,7 +1,9 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 import { BiGlobe } from "react-icons/bi";
-
+import { Collapse } from "react-collapse";
+import { useWindowWidth } from "@react-hook/window-size";
+import Menu from "../components/Menu";
 function Footer() {
   const menus = [
     {
@@ -68,11 +70,18 @@ function Footer() {
       ],
     },
   ];
+  const [isOpen, setIsOpen] = useState(true);
+  const windowWidth = useWindowWidth();
+  const toggleCollapse = () => {
+    if (windowWidth < 641) {
+      setIsOpen(!isOpen);
+    }
+  };
 
   return (
     <div className="bg-white">
-      <div className="container mx-auto w-9/12 mt-10">
-        <div className="grid grid-cols-4 pt-10 ">
+      <div className="container mx-auto w-11/12 sm:w-9/12 mt-10">
+        <div className="flex flex-col sm:grid sm:grid-cols-4 pt-10 ">
           <section>
             <div className="grid gap-y-3">
               <h6 className="text-lg text-primary-color">Getir'i indirin</h6>
@@ -97,29 +106,15 @@ function Footer() {
             </div>
           </section>
           {menus.map((menu, index) => (
-            <div>
-              <div className="grid gap-y-4">
-                <h6 className="text-lg text-primary-color">{menu.title}</h6>
-                <div>
-                  <ul className="grid gap-y-2  ">
-                    {menu.items.map((item, key) => (
-                      <li key={index}>
-                        <span className="cursor-pointer text-sm hover:text-primary-color">
-                          {item.title}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <Menu key={index} {...menu} />
           ))}
         </div>
-        <div className="flex justify-between items-center pt-8 pb-10">
-          <div className="text-xs text-gray-700 flex gap-x-8">
+        <div className="flex flex-col sm:flex-row sm:justify-between items-center pt-8 pb-10 gap-y-4">
+          <div className="text-xs text-gray-700 flex gap-x-8  ">
             2022 Getir{" "}
             <span className="text-primary-color">Bilgi Toplumu Hizmetleri</span>
           </div>
+
           <div className="flex gap-x-3">
             <span className="w-8 h-8 rounded-lg text-gray-500  hover:opacity-70 flex items-center justify-center hover:text-primary-color transition-colors cursor-pointer">
               <FaFacebook size={22} />

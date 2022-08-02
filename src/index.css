@@ -5,6 +5,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
 
+html,
 body {
   margin: 0;
   padding: 0;
@@ -13,6 +14,7 @@ body {
   background-color: #e2dcc8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  contain: paint;
 }
 
 code {

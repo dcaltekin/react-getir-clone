@@ -7,9 +7,12 @@ function Cards() {
     setCards(cardData);
   });
   return (
-    <div className="grid grid-cols-3 gap-x-4 rounded-lg w-9/12 container mx-auto mt-8 text-center">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-y-4 gap-x-4 rounded-lg w-11/12 sm:w-9/12 container mx-auto mt-8 text-center">
       {cards.map((card, index) => (
-        <div className="bg-white p-10 flex-col flex items-center gap-y-4 shadow-xl">
+        <div
+          key={index}
+          className="bg-white p-10 flex-col flex items-center gap-y-4 shadow-xl"
+        >
           <img src={card.image} alt="getir" />
           <h6 className="text-primary-color font-semibold text-lg">
             {card.title}

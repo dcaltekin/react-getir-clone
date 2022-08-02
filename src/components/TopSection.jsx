@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Slider from "react-slick";
 import ReactFlagsSelect from "react-flags-select";
+import { useWindowWidth } from "@react-hook/window-size";
 function TopSection() {
+  const windowWidth = useWindowWidth();
   const settings = {
     dots: false,
     infinite: true,
@@ -23,37 +25,40 @@ function TopSection() {
     GB: "+7",
   };
   return (
-    <div className="relative h-[500px] before:bg-gradient-to-r before:from-primary-color before:to-transparent before:absolute before:inset-0 before:w-full before:h-full before:z-10">
+    <div className="relative h-auto md:h-[500px] before:bg-gradient-to-r before:from-primary-color before:to-transparent before:absolute before:inset-0 before:w-full before:h-full before:z-10">
       {" "}
-      <Slider {...settings}>
-        <div>
+      {windowWidth >= 640 && (
+        <Slider {...settings}>
+          <div>
+            <img
+              className="w-full h-[500px] object-cover"
+              src="https://getir.com/_next/static/images/getir-mainpage-4-1751ad2d8fb42a88742d6751938da7e7.jpg"
+              alt="getir"
+            />
+          </div>
+          <div>
+            <img
+              className="w-full h-[500px] object-cover"
+              src="https://getir.com/_next/static/images/getir-mainpage-2-7c23764275cdaf14d7b6cf15ebbdd0c1.jpg"
+              alt="getir"
+            />
+          </div>
+        </Slider>
+      )}
+      <div className="container flex justify-around items-center   relative sm:absolute top-0  h-full z-20">
+        <div className="hidden sm:block">
           <img
-            className="w-full h-[500px] object-cover"
-            src="https://getir.com/_next/static/images/getir-mainpage-4-1751ad2d8fb42a88742d6751938da7e7.jpg"
-            alt="getir"
-          />
-        </div>
-        <div>
-          <img
-            className="w-full h-[500px] object-cover"
-            src="https://getir.com/_next/static/images/getir-mainpage-2-7c23764275cdaf14d7b6cf15ebbdd0c1.jpg"
-            alt="getir"
-          />
-        </div>
-      </Slider>
-      <div className="container flex justify-around items-center   absolute top-0  h-full z-20">
-        <div className="">
-          <img
+            className=""
             src="https://getir.com/_next/static/images/bimutluluk-b3a7fcb14fc9a9c09b60d7dc9b1b8fd6.svg"
             alt="getir"
           />
-          <h3 className="text-white text-lg 2xl:text-5xl xl:text-4xl mt-8">
+          <h3 className="text-white text-lg 2xl:text-5xl xl:text-5xl sm:text-2xl md:text-4xl mt-8">
             Dakikalar içinde
             <br />
             kapınızda
           </h3>
         </div>
-        <div className="rounded-lg bg-gray-50 p-6 ">
+        <div className="w-full sm:w-[400px] sm:rounded-lg bg-gray-50 p-6 ">
           <h4 className="text-primary-color font-medium text-center mb-3">
             Giriş yap veya kayıt ol
           </h4>
@@ -66,7 +71,7 @@ function TopSection() {
                 selected={selected}
               />
             </div>
-            <label className="relative block cursor-pointer">
+            <label className="relative block cursor-pointer w-full">
               <input
                 required
                 type="text"

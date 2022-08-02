@@ -8,10 +8,9 @@ function Categories() {
   }, []);
   return (
     <div className="bg-white py-4">
-      <div className="container mx-auto w-9/12 mt-8">
-        <h2 className="text-sm font-semibold mb-4">Kategoriler</h2>
-        <div className="grid grid-cols-10">
-          
+      <div className="container mx-auto w-full sm:w-9/12 mt-8">
+        <h2 className="text-sm font-semibold mb-4 ml-6 sm:ml-0">Kategoriler</h2>
+        <div className="grid grid-cols-4 xl:grid-cols-10 2xl:grid-cols-12 lg:grid-cols-8 md:grid-cols-6">
           {categories &&
             categories.map((category, index) => (
               <div key={index}>
@@ -21,7 +20,7 @@ function Categories() {
                     src={category.image}
                     alt={category.title}
                   />
-                  <span className="text-sm whitespace-nowrap text-gray-700 group-hover:text-primary-color tracking-tight">
+                  <span className="text-sm xl:whitespace-nowrap 2xl:whitespace-nowrap lg:whitespace-nowrap  text-gray-700 group-hover:text-primary-color tracking-tight">
                     {category.title}
                   </span>
                 </div>

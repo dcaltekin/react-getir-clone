@@ -3,14 +3,14 @@ import React from "react";
 function MobileSection() {
   return (
     <div>
-      <div className="flex justify-between items-center container mx-auto w-9/12 h-88 bg-primary-color bg-mobile-color mt-8  rounded-lg text-white">
+      <div className="flex justify-between items-center container mx-auto w-11/12 sm:w-9/12  h-88 bg-primary-color bg-mobile-color mt-8  rounded-lg text-white">
         <div className="flex flex-col gap-y-3 mt-8 p-10">
           <h3 className="text-2xl font-bold tracking-tight">Getir'i indirin</h3>
           <p className="font-semibold ">
             İstediğiniz ürünleri dakikalar içinde kapınıza <br />
             getirelim.
           </p>
-          <div className="flex mt-5 gap-x-2">
+          <div className="flex flex-col lg:flex-row gap-y-2 mt-5 gap-x-2">
             <a href="/" className="transition-all transform hover:scale-95">
               <img
                 src="https://getir.com/_next/static/images/appstore-tr-141ed939fceebdcee96af608fa293b31.svg"
@@ -31,7 +31,7 @@ function MobileSection() {
             </a>
           </div>
         </div>
-        <div className="pt-12">
+        <div className="pt-12 hidden lg:block">
           <img
             src="https://getir.com/_next/static/images/phoneLanding-88c033545710c4808054072689e187d7.png"
             alt="getir"
