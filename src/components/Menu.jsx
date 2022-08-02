@@ -8,23 +8,23 @@ function Menu({ title, items }) {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleCollapse = () => {
-    if (windowWidth <= 768) {
+    if (windowWidth <= 640) {
       setIsOpen(!isOpen);
     }
   };
 
   useEffect(() => {
-    if (isOpen && windowWidth <= 768) {
+    if (isOpen && windowWidth <= 640) {
       setIsOpen(false);
     }
-    if (!isOpen && windowWidth > 768) {
+    if (!isOpen && windowWidth > 640) {
       setIsOpen(true);
     }
   }, [windowWidth]);
 
   return (
     <div>
-      <div className="grid gap-y-2 md:gap-y-4 pt-6">
+      <div className="grid gap-y-2 md:gap-y-4 pt-6 sm:pt-0">
         <h6
           onClick={toggleCollapse}
           className="text-lg text-primary-color flex items-center justify-between"
