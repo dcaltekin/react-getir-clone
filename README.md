@@ -11,4 +11,4 @@
 ### `Responsive Design`
 ### `Tailwind CSS`
 
-Demo: https://getir-clone-react.netlify.app/
+Live: https://getir-clone-react.netlify.app/
