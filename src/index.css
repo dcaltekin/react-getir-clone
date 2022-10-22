@@ -14,7 +14,7 @@ body {
   background-color: #e2dcc8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  contain: paint;
+  overflow-x: hidden;
 }
 
 code {
